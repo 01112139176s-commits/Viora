@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070b12">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="app.css">
+<title>فيورا</title>
+</head>
+<body>
+<div id="app">
+  <div class="bar">
+    <div class="brand"><span class="logo"><i></i><i></i></span>VIORA</div>
+    <div class="pill" id="pill" role="button" tabindex="0"></div>
+  </div>
+  <main>
+    <section class="tab" id="tab-home" data-tab="home"></section>
+    <section class="tab" id="tab-viora" data-tab="viora" hidden>
+      <div class="chat" id="chat" aria-live="polite"></div>
+      <div class="composer">
+        <button class="mic" id="mic" type="button" aria-label="مايك"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
+        <div class="hint" id="micHint">اضغط المايك وقل: «يا فيورا، افتحي نور الصالة»</div>
+        <form id="txtForm" autocomplete="off"><input id="txtIn" type="text" placeholder="أو اكتبي الأمر هنا…"><button class="btn sm" type="submit">إرسال</button></form>
+      </div>
+    </section>
+    <section class="tab" id="tab-memory" data-tab="memory" hidden></section>
+    <section class="tab" id="tab-scenes" data-tab="scenes" hidden></section>
+    <section class="tab" id="tab-settings" data-tab="settings" hidden></section>
+  </main>
+  <nav class="nav" id="nav">
+    <button data-go="home" class="on" type="button"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg>الرئيسية</button>
+    <button data-go="viora" type="button"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>فيورا</button>
+    <button data-go="memory" type="button"><svg viewBox="0 0 24 24"><path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 6 1V5a2 2 0 0 0-3-1zM15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-6 1"/></svg>الذاكرة</button>
+    <button data-go="scenes" type="button"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M8 5l2 4M14 5l2 4"/></svg>المشاهد</button>
+    <button data-go="settings" type="button"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg>الإعدادات</button>
+  </nav>
+</div>
+<div class="sheetWrap" id="sheetWrap" hidden><div class="sheet" id="sheet"></div></div>
+<div class="toast" id="toast" hidden></div>
+<script src="logic.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
